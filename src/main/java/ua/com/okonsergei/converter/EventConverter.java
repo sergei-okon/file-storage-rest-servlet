@@ -18,7 +18,11 @@ public class EventConverter {
         if (event == null) {
             eventDto = null;
         } else {
-            eventDto.setId(event.getId());
+            if (event.getId() == null) {
+                eventDto.setId(null);
+            } else {
+                eventDto.setId(event.getId());
+            }
             eventDto.setUpdated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getUpdated()));
             eventDto.setCreated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getCreated()));
             if (event.getUser() == null) {
@@ -40,9 +44,14 @@ public class EventConverter {
         if (eventDto == null) {
             event = null;
         } else {
-            event.setId(eventDto.getId());
-            event.setCreated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getCreated()));
-            event.setUpdated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getUpdated()));
+            if (eventDto.getId() == null) {
+                event.setId(null);
+            } else {
+                event.setId(eventDto.getId());
+                event.setCreated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getCreated()));
+                event.setUpdated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getUpdated()));
+            }
+
             if (eventDto.getUserId() == null) {
                 event.setUser(null);
             } else {
