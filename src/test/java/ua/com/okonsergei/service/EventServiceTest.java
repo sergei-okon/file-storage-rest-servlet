@@ -6,6 +6,7 @@ import ua.com.okonsergei.converter.EventConverter;
 import ua.com.okonsergei.model.dto.EventDto;
 import ua.com.okonsergei.repository.EventRepository;
 import ua.com.okonsergei.repository.db.hibernate.EventEntityRepositoryImpl;
+import ua.com.okonsergei.repository.entity.Event;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -30,6 +31,7 @@ class EventServiceTest {
     @Test
     void findById_Success() {
         Long id = 1L;
+
         eventService.findById(id);
         verify(eventRepositoryMock).findById(id);
     }

@@ -12,12 +12,15 @@ import java.util.List;
 public class EventEntityRepositoryImpl implements EventRepository {
     @Override
     public Event findById(Long id) {
-        Event event;
-        try (Session session = HibernateUtil.openSession()) {
-            event = session.get(Event.class, id);
+        Event event = null;
+        if (id != null) {
+            try (Session session = HibernateUtil.openSession()) {
+                event = session.get(Event.class, id);
+            }
         }
         return event;
     }
+
 
     @Override
     public List<Event> findAll() {

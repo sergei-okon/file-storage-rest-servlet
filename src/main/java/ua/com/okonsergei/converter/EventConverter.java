@@ -15,7 +15,7 @@ public class EventConverter {
 
     public static EventDto convertToDto(Event event) {
         EventDto eventDto = new EventDto();
-        if (event.getId() == null) {
+        if (event == null) {
             eventDto = null;
         } else {
             eventDto.setId(event.getId());
@@ -37,7 +37,7 @@ public class EventConverter {
 
     public static Event convertToEntity(EventDto eventDto) {
         Event event = new Event();
-        if (eventDto.getId() == null) {
+        if (eventDto == null) {
             event = null;
         } else {
             event.setId(eventDto.getId());
