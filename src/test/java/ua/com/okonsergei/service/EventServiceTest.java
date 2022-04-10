@@ -29,7 +29,7 @@ class EventServiceTest {
 
     @Test
     void findById_Success() {
-        Long id = 5L;
+        Long id = 1L;
         eventService.findById(id);
         verify(eventRepositoryMock).findById(id);
     }
@@ -49,7 +49,7 @@ class EventServiceTest {
 
     @Test
     void deleteById_Success() {
-        Long id = 5L;
+        Long id = 1L;
         eventService.deleteById(id);
         verify(eventRepositoryMock).deleteById(id);
     }
