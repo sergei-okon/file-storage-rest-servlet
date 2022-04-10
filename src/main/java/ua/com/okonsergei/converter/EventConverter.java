@@ -51,7 +51,6 @@ public class EventConverter {
                 event.setCreated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getCreated()));
                 event.setUpdated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getUpdated()));
             }
-
             if (eventDto.getUserId() == null) {
                 event.setUser(null);
             } else {
