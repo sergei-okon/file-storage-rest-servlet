@@ -37,12 +37,6 @@ class EventServiceTest {
     @Test
     void save_Success() {
         EventDto eventDto = new EventDto();
-        System.out.println(eventDto);
-//        eventDto.setId(1L);
-//        eventDto.setUpdated(1646734746000L);
-//        eventDto.setCreated(1646734743000L);
-//        eventDto.setFileId(2L);
-//        eventDto.setUserId(2L);
 
         eventService.save(eventDto);
         verify(eventRepositoryMock).save(EventConverter.convertToEntity(eventDto));
@@ -58,11 +52,6 @@ class EventServiceTest {
     @Test
     void update_Success() {
         EventDto eventDto = new EventDto();
-        eventDto.setId(1L);
-        eventDto.setUpdated(1646734746000L);
-        eventDto.setCreated(1646734743000L);
-        eventDto.setFileId(2L);
-        eventDto.setUserId(2L);
 
         eventService.update(eventDto);
         verify(eventRepositoryMock).update(EventConverter.convertToEntity(eventDto));

@@ -19,7 +19,9 @@ public class DeleteEventServlet extends HttpServlet {
     protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String idStr = request.getParameter("id");
 
-        if (ServletUtils.idIsNumber(request) && eventService.findById(Long.parseLong(idStr)) != null) {
+        if (ServletUtils.idIsNumber(request) && idStr != null &&
+                eventService.findById(Long.parseLong(idStr)) != null) {
+
             eventService.deleteById(Long.parseLong(idStr));
             ServletUtils.createResponseJson(response, "Delete operation is successful");
         } else {
