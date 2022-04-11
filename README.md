@@ -33,5 +33,5 @@ User -> List<Events>
 
 Рабочее приложение должно быть развернуто на heroku.com
 
-Технологии: Java, MySQL, Hibernate, HTTP, Servlets, Maven, Flyway.
+Технологии: Java, MySQL, Hibernate, HTTP, Servlets, Maven, FlywayInit.
 

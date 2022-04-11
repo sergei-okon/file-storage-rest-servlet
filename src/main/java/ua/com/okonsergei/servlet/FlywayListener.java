@@ -15,6 +15,7 @@ public class FlywayListener implements ServletContextListener, HttpSessionListen
         FlywayMigration.runFlyWay();
     }
 
+
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
     }

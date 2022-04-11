@@ -23,8 +23,6 @@ public class EventConverter {
             } else {
                 eventDto.setId(event.getId());
             }
-            eventDto.setUpdated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getUpdated()));
-            eventDto.setCreated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getCreated()));
             if (event.getUser() == null) {
                 eventDto.setUserId(null);
             } else {
@@ -35,6 +33,8 @@ public class EventConverter {
             } else {
                 eventDto.setFileId(event.getFile().getId());
             }
+            eventDto.setUpdated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getUpdated()));
+            eventDto.setCreated(ConverterLocalDateTime.convertLocalDateTimeToLong(event.getCreated()));
         }
         return eventDto;
     }
@@ -48,8 +48,6 @@ public class EventConverter {
                 event.setId(null);
             } else {
                 event.setId(eventDto.getId());
-                event.setCreated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getCreated()));
-                event.setUpdated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getUpdated()));
             }
             if (eventDto.getUserId() == null) {
                 event.setUser(null);
@@ -61,6 +59,8 @@ public class EventConverter {
             } else {
                 event.setFile(FileConverter.convertToEntity(fileService.findById(eventDto.getFileId())));
             }
+            event.setCreated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getCreated()));
+            event.setUpdated(ConverterLocalDateTime.convertLongToLocalDateTime(eventDto.getUpdated()));
         }
         return event;
     }
