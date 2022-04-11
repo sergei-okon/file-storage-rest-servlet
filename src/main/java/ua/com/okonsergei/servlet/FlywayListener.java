@@ -12,7 +12,9 @@ import javax.servlet.http.HttpSessionListener;
 public class FlywayListener implements ServletContextListener, HttpSessionListener, HttpSessionAttributeListener {
 
     public void contextInitialized(ServletContextEvent sce) {
-        FlywayMigration.runFlyWay();
+//        System.out.println("=======================================");
+//        FlywayMigration.runFlyWay();
+//        System.out.println("=======================================");
     }
 
 
