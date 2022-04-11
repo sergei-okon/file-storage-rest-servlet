@@ -41,6 +41,7 @@ public class EventConverter {
 
     public static Event convertToEntity(EventDto eventDto) {
         Event event = new Event();
+
         if (eventDto == null) {
             event = null;
         } else {
