@@ -30,7 +30,6 @@ public class ServletUtils {
 
         return user_idStr != null && (user_idStr.length() > 0) && user_idStr.matches(ONLY_DIGITS) &&
                 file_idStr != null && (file_idStr.length() > 0) && file_idStr.matches(ONLY_DIGITS);
-
     }
 
     public static <T> void createResponseJson(HttpServletResponse response, T t) throws IOException {

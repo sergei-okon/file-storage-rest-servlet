@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "ErrorHandler", value = "/errorHandler")
 public class ErrorHandler extends HttpServlet {
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Integer code = (Integer) request.getAttribute("javax.servlet.error.status_code");
         response.setContentType("text/html");
         PrintWriter writer = response.getWriter();
@@ -33,7 +33,7 @@ public class ErrorHandler extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         doGet(request, response);
     }
 }
